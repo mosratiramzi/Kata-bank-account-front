@@ -1,0 +1,37 @@
+<div class="container">
+<h1> Hello Ramzi</h1>
+<br>
+<h2> Your current balance: {{currentBalance}} €</h2>
+<br>
+<h3>What you would like to do ?</h3>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4 bg-info">
+        <div class="mb-3">
+          <label for="depositInput" class="form-label">Deposit</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="depositInput" placeholder="Enter the amount to deposit" [(ngModel)]="amountToDeposit">
+            <button [disabled]="amountToDeposit<=0" style="margin-left: 3px" class="btn btn-outline-secondary" type="button" (click)="deposit()" id="depositBtn">OK</button>
+          </div>
+           <span *ngIf="amountToDeposit<0" class="form-text alert-danger"> Incorrect amount, please put only positive amount !</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col-4 bg-info">
+        <div class="mb-3">
+          <label for="withdrawInput" class="form-label">Withdrawal</label>
+          <div class="input-group">
+          <input type="number" class="form-control" id="withdrawInput" placeholder="Enter the amount to withdraw" [(ngModel)]="amountToWithdraw">
+          <button [disabled]="amountToWithdraw<=0" style="margin-left: 3px" class="btn btn-outline-secondary" type="button" (click)="withdraw()" id="withdrawBtn">OK</button>
+          </div>
+          <span *ngIf="amountToWithdraw<0" class="form-text alert-danger"> Incorrect amount, please put only positive amount !</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
